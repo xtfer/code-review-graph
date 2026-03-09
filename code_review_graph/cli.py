@@ -147,13 +147,19 @@ def main() -> None:
         "install", help="Register MCP server with Claude Code (creates .mcp.json)"
     )
     install_cmd.add_argument("--repo", default=None, help="Repository root (auto-detected)")
-    install_cmd.add_argument("--dry-run", action="store_true", help="Show what would be done without writing files")
+    install_cmd.add_argument(
+        "--dry-run", action="store_true",
+        help="Show what would be done without writing files",
+    )
 
     init_cmd = sub.add_parser(
         "init", help="Alias for install"
     )
     init_cmd.add_argument("--repo", default=None, help="Repository root (auto-detected)")
-    init_cmd.add_argument("--dry-run", action="store_true", help="Show what would be done without writing files")
+    init_cmd.add_argument(
+        "--dry-run", action="store_true",
+        help="Show what would be done without writing files",
+    )
 
     # build
     build_cmd = sub.add_parser("build", help="Full graph build (re-parse all files)")
